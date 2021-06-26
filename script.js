@@ -1,10 +1,11 @@
 let ulTasks = $('#ulTasks');
 let btnAdd = $('#btnAdd');
-let btnClear = $('#btnClear');
+let btnReset = $('#btnReset');
 let inpNewTask = $('#inpNewTask');
 
 function addTask() {
     if(inpNewTask.val() == ''){
+        inpNewTask.focus();
         return;
     }
     let liNewTask = $('<li>', {
@@ -15,7 +16,7 @@ function addTask() {
         liNewTask.toggleClass('done');
     });
     ulTasks.append(liNewTask);
-    inpNewTask.val('');
+    inpNewTask.val('').focus();
 }
 
 inpNewTask.keypress((e) => {
@@ -24,4 +25,4 @@ inpNewTask.keypress((e) => {
 
 btnAdd.click(addTask);
 
-btnClear.click(() => inpNewTask.val(''));
+btnReset.click(() => inpNewTask.val('').focus());
