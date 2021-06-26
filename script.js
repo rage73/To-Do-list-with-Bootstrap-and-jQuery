@@ -4,6 +4,9 @@ let btnClear = $('#btnClear');
 let inpNewTask = $('#inpNewTask');
 
 function addTask() {
+    if(inpNewTask.val() == ''){
+        return;
+    }
     let liNewTask = $('<li>', {
         'class': 'list-group-item',
         text: inpNewTask.val()
