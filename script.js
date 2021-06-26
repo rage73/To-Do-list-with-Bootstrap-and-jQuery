@@ -4,11 +4,14 @@ let btnClear = $('#btnClear');
 let inpNewTask = $('#inpNewTask');
 
 btnAdd.click(() => {
-    let liTask = $('<li>', {
+    let liNewTask = $('<li>', {
         'class': 'list-group-item',
         text: inpNewTask.val()
     });
-    ulTasks.append(liTask);
+    liNewTask.click((event) => {
+        liNewTask.toggleClass('done');
+    });
+    ulTasks.append(liNewTask);
     inpNewTask.val('');
 });
 
