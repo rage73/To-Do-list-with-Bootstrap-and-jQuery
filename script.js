@@ -1,6 +1,8 @@
 let ulTasks = $('#ulTasks');
 let btnAdd = $('#btnAdd');
 let btnReset = $('#btnReset');
+let btnCleanup = $('#btnCleanup');
+let btnSort = $('#btnSort');
 let inpNewTask = $('#inpNewTask');
 
 function addTask() {
@@ -26,3 +28,7 @@ inpNewTask.keypress((e) => {
 btnAdd.click(addTask);
 
 btnReset.click(() => inpNewTask.val('').focus());
+
+btnCleanup.click(() => $('#ulTasks .done').remove());
+
+btnSort.click(() => $('#ulTasks .done').appendTo(ulTasks));
